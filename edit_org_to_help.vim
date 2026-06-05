@@ -35,7 +35,7 @@ silent! %s/^\s\+$//g
 0/^- `add`/-call append('.', '                                      *lua_metamethods* *lua_metatable_events*')
 " ======== Set up columns/sections
 
-" insert table of contents
+" Insert table of contents
 execute '0/1 --/-2read toc/' . expand('%:t:r') . '.txt'
 " Change section headers to proper format and insert link targets
 0/lua_reference_toc/;/===/g/^\d/execute printf('%%s/^\*\+ %s -- \(.*\)/\=toupper(submatch(1))..repeat(" ", 78-strwidth(submatch(1).."%s")).."*%s*"', expand('<cWORD>'), split(getline('.'))[-1], split(getline('.'))[-1][1:-2])
@@ -64,5 +64,14 @@ g/--------------\n\n\*\{3}/,+2s/--------------\n\n\*\{3} =\([^(]\+\)\( (.*)\)\?=
 " Finish verbatim
 %s/\%([\t ("']\|^\)\zs=\([^= \t]\%([^=]*[^= \t]\)\?\)=/`\1`/g
 
+" Set code blocks to Lua
+" %s/^>$/>lua/g
+
+" Remove invalid equality
+%s/\s::\?=/ =/g
+
+" Remove trailing whitespace
+%s/\s\+$//
+
 write! translations/lua_reference.%:t:rx
-quit!
+quitall!

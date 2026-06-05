@@ -67,3 +67,4 @@ respectively).
 If you do not want the english version, replace the english files with the
 version you prefer.
 
+vim: set tw=78 ts=4 sw=4 sts=4 et ai si sta ft=help norl:

@@ -52,3 +52,4 @@ CONTEÚDO                                                   *lua_reference_toc*
 
 8      - A Sintaxe Completa de Lua               |lua_syntax|
 
+vim: set tw=78 ts=4 sw=4 sts=4 et ai si sta ft=help norl:
