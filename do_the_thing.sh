@@ -19,7 +19,7 @@ for LANG in en pt es de; do
     pandoc html/${LANG}.html -o org/${LANG}.org
 
     echo Making edits and writing translations/lua_reference.${LANG}x
-    cat edit_org_to_help.vim | nvim -es -u NONE org/${LANG}.org
+    cat edit_org_to_help.vim | nvim -es --clean org/${LANG}.org
 
     echo
 done
