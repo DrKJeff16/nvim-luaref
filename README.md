@@ -24,6 +24,5 @@ For lazy.nvim:
 {
   'DrKJeff16/nvim-luaref',
   lazy = false,
-  build = 'make',
 }
 ```
